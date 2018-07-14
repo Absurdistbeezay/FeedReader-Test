@@ -100,6 +100,11 @@ $(function () {
                 done();
             })
         })
+
+        //test to check there is at least one entry in feed
+        it('is called and has at least one feed', function(){
+            expect($('.entry').length).toBeGreaterThan(0);
+        })
     })
 
     /* TODO: Write a new test suite named "New Feed Selection" */
