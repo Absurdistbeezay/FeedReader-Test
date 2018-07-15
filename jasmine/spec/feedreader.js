@@ -93,24 +93,47 @@ $(function () {
      * Remember, loadFeed() is asynchronous so this test will require
      * the use of Jasmine's beforeEach and asynchronous done() function.
      */
-    describe('Initial Entries', function(){
+    describe('Initial Entries', function () {
         //allows testing async function using beforeEach
-        beforeEach(function(done){
-            loadFeed(0, function(){
+        beforeEach(function (done) {
+            loadFeed(0, function () {
                 done();
             })
         })
 
         //test to check there is at least one entry in feed
-        it('is called and has at least one feed', function(){
-            expect($('.entry').length).toBeGreaterThan(0);
+        it('is called and has at least one feed', function () {
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         })
     })
 
+
+
     /* TODO: Write a new test suite named "New Feed Selection" */
 
-    /* TODO: Write a test that ensures when a new feed is loaded
-     * by the loadFeed function that the content actually changes.
-     * Remember, loadFeed() is asynchronous.
-     */
+    describe('New Feed Selection', function () {
+        /* TODO: Write a test that ensures when a new feed is loaded
+          * by the loadFeed function that the content actually changes.
+          * Remember, loadFeed() is asynchronous.
+          */
+         var feed1;
+         var feed2;
+       
+        beforeEach(function (done) {
+            loadFeed(0, function () {
+                feed1 = $('.feed').html();
+                done();
+            })
+        })
+
+        it('is loaded by loadFeed function and the content actually changes', function (done) {
+            loadFeed(1, function () {
+                feed2 = $('.feed').html();
+
+                expect(feed2).not.toEqual(feed1);
+                done();
+            })
+        })
+    })
+
 }());
