@@ -3,6 +3,12 @@
 In this project, a web-based application that reads RSS feeds is already given. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where we (the testers) come in!
 
 
+## Click [here](https://absurdistbeezay.github.io/FeedReader-Test/) to run the application.
+### To download this project in your local computer:
+```
+git clone https://github.com/Absurdistbeezay/FeedReader-Test.git
+```
+
 ## Why this Project?
 
 Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
