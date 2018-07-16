@@ -7,8 +7,8 @@
 /* We're placing all of our tests within the $() function,
  * since some of these tests may require DOM elements.
  */
+$(document).ready(function () {
 
-$(function () {
     //This suite is all about the RSS
     //feeds definitions, the allFeeds variable in our application.
     describe('RSS Feeds', function () {
@@ -102,5 +102,4 @@ $(function () {
             })
         })
     })
-
-}());
+});
